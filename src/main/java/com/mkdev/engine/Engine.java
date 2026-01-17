@@ -32,9 +32,9 @@ public class Engine {
 
     public void cleanup() {
         appLogic.cleanup();
-        window.cleanup();
         render.cleanup();
         scene.cleanup();
+        window.cleanup();
     }
 
     private void resize() {
@@ -43,8 +43,8 @@ public class Engine {
 
     private void run(){
         long initialTime = System.currentTimeMillis();
-        float timeU = 1000f / targetUps;
-        float timeR = targetFps > 0 ? 1000f / targetFps : 0;
+        float timeU = 1000.0f / targetUps;
+        float timeR = targetFps > 0 ? 1000.0f / targetFps : 0;
         float deltaUpdate = 0;
         float deltaFps = 0;
 

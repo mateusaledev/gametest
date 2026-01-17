@@ -3,12 +3,11 @@ package com.mkdev.game;
 import com.mkdev.engine.*;
 import com.mkdev.engine.IAppLogic;
 import com.mkdev.engine.Window;
+import com.mkdev.engine.graph.Mesh;
 import com.mkdev.engine.graph.Render;
 import com.mkdev.engine.scene.Scene;
 
 public class Main implements IAppLogic {
-    // The window handle
-    private long window;
 
     public static void main(String[] args) {
         Main main = new Main();
@@ -23,7 +22,13 @@ public class Main implements IAppLogic {
 
     @Override
     public void init(Window window, Scene scene, Render render) {
-        // Nothing to be done yet
+        float[] positions = new float[]{
+                0.0f, 0.5f, 0.0f,
+                -0.5f, -0.5f, 0.0f,
+                0.5f, -0.5f, 0.0f
+        };
+        Mesh mesh = new Mesh(positions, 3);
+        scene.addMesh("triangle", mesh);
     }
 
     @Override
